@@ -1,0 +1,103 @@
+<!--pages/home/home.wxml-->
+<import src="../../templates/goods-list.wxml"/>
+
+<view class="page-container">
+
+  <view class="section" wx:for="{{moduleList}}" wx:key="{{sectionId}}" wx:for-index="moduleIndex" wx:for-item="moduleItem" id="section-{{sectionId}}">
+
+    <!-- section1 swiper -->
+    <swiper wx:if="{{moduleItem}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="width:750rpx;height:412rpx;">
+      <block wx:for="{{moduleItem.recommendList}}">
+        <swiper-item>
+          <image src="{{item.imgUrl}}" mode="aspectFill" bindtap="routeTo" data-moduleIndex="{{moduleIndex}}" data-index="{{index}}" class="slide-image" style="width:100%;height:100%;" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!-- section2 -->
+    <view class="weui-flex" style="flex-direction:row;">
+      <view class="weui-flex__item">
+        <image src="http://117.78.38.130/images/recommend/15/mainImg/624d9007-8ce6-4582-884b-a5bddadcb16c_150x150.png" mode="widthFix" style="width:100%;height:100%;"></image>
+        <text>市集餐饮</text>
+      </view>
+      <view class="weui-flex__item">
+        <image src="http://117.78.38.130/images/recommend/15/mainImg/624d9007-8ce6-4582-884b-a5bddadcb16c_150x150.png" mode="widthFix" style="width:100%;height:100%;"></image>
+        <text>市集餐饮</text>
+      </view>
+      <view class="weui-flex__item">
+        <image src="http://117.78.38.130/images/recommend/15/mainImg/624d9007-8ce6-4582-884b-a5bddadcb16c_150x150.png" mode="widthFix" style="width:100%;height:100%;"></image>
+        <text>市集餐饮</text>
+      </view>
+      <view class="weui-flex__item">
+        <image src="http://117.78.38.130/images/recommend/15/mainImg/624d9007-8ce6-4582-884b-a5bddadcb16c_150x150.png" mode="widthFix" style="width:100%;height:100%;"></image>
+        <text>市集餐饮</text>
+      </view>
+      <view class="weui-flex__item">
+        <image src="http://117.78.38.130/images/recommend/15/mainImg/624d9007-8ce6-4582-884b-a5bddadcb16c_150x150.png" mode="widthFix" style="width:100%;height:100%;"></image>
+        <text>市集餐饮</text>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- flex 布局 -->
+  <view class="section">
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+          <template is="goods-list" data="{{name: '旺仔小馒头', price: '6.00', url:'http://www.huimuu.com/images/20150926/goods_gallery/2015092611095937531.jpg'}}"/>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">weui</view>
+          <view class="placeholder">{{currentDateTime}}</view>
+          <view class="placeholder">weui</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">weui</view>
+        </view>
+    </view>
+  </view>
+
+  <!-- 微信登录获取信息 -->
+  <view class="section userinfo">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="nickname">{{userInfo.nickName}}</text>
+    <text class="motto">{{motto}}</text>
+  </view>
+
+  <!-- 查看日志 -->
+  <view class="section">
+    <button class="weui-btn" type="default" bindtap="bindViewTap">
+      <icon type="search" size="16"></icon>
+      查看日志
+    </button>
+    <!--<button class="weui-btn button-primary" type="primary" disabled="true">Lorem Ipsum</button>
+    <button class="weui-btn" type="warn">查看群排名</button>
+    <button class="weui-btn" type="primary" plain="true">注册</button>
+    <button class="weui-btn" type="default" plain="true">登录</button>-->
+  </view>
+
+  <view class="section">
+    <canvas canvas-id="c" style="width: 200px; height: 200px;margin-left:auto;margin-right:auto;"></canvas>
+  </view>
+
+  <view class="weui-loadmore">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+
+  <view class="section">
+    <audio src="http://www.w3school.com.cn/i/song.mp3" controls author="康康酱(雾" name="一只歌曲酱" poster="http://117.78.38.130/images/recommend/83/mainImg/6ac5d24d-89ea-4b3c-8907-319860f8308c_1125x585.png"></audio>
+  </view>
+
+  <!--<view class="section">
+    <button class="weui-btn mini-btn" type="primary" size="mini">about</button>
+    <button class="weui-btn mini-btn" type="default" size="mini">product</button>
+    <button class="weui-btn mini-btn" type="warn" size="mini">contact</button>
+  </view>-->
+
+  <!--<view class="section">
+    <view> Hello {{userInfo.nickName}}! </view>
+    <button bindtap="changeName"> Click me! </button>
+  </view>-->
+
+</view>

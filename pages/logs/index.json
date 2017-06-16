@@ -1,0 +1,8 @@
+{
+    "backgroundColor": "#545690",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#b60",
+    "navigationBarTextStyle": "#404040",
+    "navigationBarTitleText": "weapp 调试重启日志",
+    "enablePullDownRefresh": false
+}
